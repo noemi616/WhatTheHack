@@ -44,7 +44,7 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
       {
         name: 'Dependency_to_sync_Rate_Limit_Inbound'
         properties: {
-          protocol: 'Tcp'
+          protocol: 'Udp'
           sourcePortRange: '*'
           destinationPortRange: '4290'
           sourceAddressPrefix: 'VirtualNetwork'
@@ -72,7 +72,11 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
         properties: {
           protocol: '*'
           sourcePortRange: '*'
-          destinationPortRange: '5671'
+          destinationPortRanges: [
+            '5671'
+            '5672'
+            '443'
+          ]
           sourceAddressPrefix: 'VirtualNetwork'
           destinationAddressPrefix: 'EventHub'
           access: 'Allow'
@@ -96,7 +100,7 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
       {
         name: 'Depenedency_To_sync_RateLimit_Outbound'
         properties: {
-          protocol: 'Tcp'
+          protocol: 'Udp'
           sourcePortRange: '*'
           destinationPortRange: '4290'
           sourceAddressPrefix: 'VirtualNetwork'
@@ -145,7 +149,6 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
           direction: 'Outbound'
           destinationPortRanges: [
             '443'
-            '12000'
             '1886'
           ]
         }
@@ -179,10 +182,7 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
           access: 'Allow'
           priority: 200
           direction: 'Outbound'
-          destinationPortRanges: [
-            '80'
-            '443'
-          ]
+          destinationPortRange: '443'
         }
       }
       {
@@ -204,7 +204,10 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
         properties: {
           protocol: 'Tcp'
           sourcePortRange: '*'
-          destinationPortRange: '443'
+          destinationPortRanges: [
+            '12000'
+            '443'
+          ]
           sourceAddressPrefix: 'VirtualNetwork'
           destinationAddressPrefix: 'AzureCloud'
           access: 'Allow'
@@ -223,9 +226,7 @@ resource apimNSGResource 'Microsoft.Network/networkSecurityGroups@2020-06-01' = 
           access: 'Allow'
           priority: 350
           direction: 'Outbound'
-          destinationPortRanges: [
-            '443'
-          ]
+          destinationPortRange: '443'
         }
       }
       {
