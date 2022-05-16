@@ -50,6 +50,45 @@ resource privateDnsZoneARecord2Resource 'Microsoft.Network/privateDnsZones/A@202
   }
 }
 
+resource privateDnsZoneARecord2Resource 'Microsoft.Network/privateDnsZones/A@2020-06-01' = if (true) {
+  parent: privateDnsZoneResource
+  name: '${apim_name}.portal'
+  properties: {
+    ttl: 36000
+    aRecords: [
+      {
+        ipv4Address: apimIpv4Address 
+      }
+    ]
+  }
+}
+
+resource privateDnsZoneARecord2Resource 'Microsoft.Network/privateDnsZones/A@2020-06-01' = if (true) {
+  parent: privateDnsZoneResource
+  name: '${apim_name}.management'
+  properties: {
+    ttl: 36000
+    aRecords: [
+      {
+        ipv4Address: apimIpv4Address 
+      }
+    ]
+  }
+}
+
+resource privateDnsZoneARecord2Resource 'Microsoft.Network/privateDnsZones/A@2020-06-01' = if (true) {
+  parent: privateDnsZoneResource
+  name: '${apim_name}.scm'
+  properties: {
+    ttl: 36000
+    aRecords: [
+      {
+        ipv4Address: apimIpv4Address 
+      }
+    ]
+  }
+}
+
 resource privateDnsLinkNameResource 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06-01' = {
   parent: privateDnsZoneResource
   name: vnet_dns_link_name
