@@ -87,6 +87,7 @@ Here is the current list of What The Hack hackathons available in this repositor
 
 ## Operations
 - [Azure Monitoring](/007-AzureMonitoring/README.md)
+- [Datadog On Azure](/059-DatadogOnAzure/README.md)
 - [DevOps with GitHub](/031-DevOpsWithGitHub/readme.md)
 - [DevOps with GitHub Actions](/044-DevOpswithGitHubActions/README.md)
 - [Azure DevOps](/010-AzureDevOps/README.md)
@@ -94,6 +95,8 @@ Here is the current list of What The Hack hackathons available in this repositor
 - [MLOps from Scratch](/032-MLOpsFromScratch/README.md)
 - [Linux Fundamentals](/020-LinuxFundamentals/README.md)
 - [Data Governance with Microsoft Purview](/051-MicrosoftPurview/README.md)
+- [Sentinel Automated Response](/053-SentinelAutomatedResponse/README.md)
+- [Azure Load Testing](/054-AzureLoadTesting/README.md)
 
 ## Data & AI
 - [Data Governance with Microsoft Purview](/051-MicrosoftPurview/README.md)
